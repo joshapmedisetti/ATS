@@ -14,5 +14,11 @@ public interface UserService {
     
     //Get User By Id
     User getUserById(Integer userId);
+    
+    //Delete by Id
+    String deleteById(Integer userId);
+    
+    //Update user details by id
+    String updateUserData(Integer userId, User user);
 
 }

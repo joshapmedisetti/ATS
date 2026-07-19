@@ -3,9 +3,12 @@ package com.ats.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +37,22 @@ public class UserController {
     @GetMapping("/getUserById/{userId}")
     public User getUserById(@PathVariable Integer userId) {
     	return userService.getUserById(userId);
+    }
+    
+    //deleteById
+    @DeleteMapping("deleteById/{userId}")
+    public ResponseEntity<String> deleteUser(@PathVariable Integer userId) {
+
+        String message = userService.deleteById(userId);
+
+        return ResponseEntity.ok(message);
+    }
+    
+    //Update User Data
+    @PutMapping("updateUserData/{userId}")
+    public ResponseEntity<String> updateUserData(@PathVariable Integer userId,@RequestBody User user){
+    	String message=userService.updateUserData(userId, user);
+    	return ResponseEntity.ok(message);
     }
 
 }
