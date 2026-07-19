@@ -48,7 +48,7 @@ public class UserController {
         return ResponseEntity.ok(message);
     }
     
-    //Update User Data //Joshap
+    //Update User Data
     @PutMapping("updateUserData/{userId}")
     public ResponseEntity<String> updateUserData(@PathVariable Integer userId,@RequestBody User user){
     	String message=userService.updateUserData(userId, user);
