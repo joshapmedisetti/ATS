@@ -8,5 +8,7 @@ import com.ats.entity.User;
 //Repository for User Module 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
+	
+	User findByUsername(String username);
 
 }
