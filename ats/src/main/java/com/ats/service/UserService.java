@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ats.entity.User;
 
+//Service Interface
 public interface UserService {
 
 	//Get all Users

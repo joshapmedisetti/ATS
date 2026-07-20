@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ats.entity.User;
 import com.ats.service.UserService;
 
+//API for User Module
 @RestController
 @RequestMapping("/api/User")
 public class UserController {
