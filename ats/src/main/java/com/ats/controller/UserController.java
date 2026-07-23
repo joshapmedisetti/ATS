@@ -40,14 +40,14 @@ public class UserController {
     	return userService.getUserById(userId);
     }
     
-    //deleteById
-    @DeleteMapping("deleteById/{userId}")
-    public ResponseEntity<String> deleteUser(@PathVariable Integer userId) {
+	// deleteById
+	@DeleteMapping("deleteById/{userId}")
+	public ResponseEntity<String> deleteUser(@PathVariable Integer userId) {
 
-        String message = userService.deleteById(userId);
+		String message = userService.deleteById(userId);
 
-        return ResponseEntity.ok(message);
-    }
+		return ResponseEntity.ok(message);
+	}
     
     //Update User Data // update done
     @PutMapping("updateUserData/{userId}")
