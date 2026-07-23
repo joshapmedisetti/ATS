@@ -29,10 +29,11 @@ public class RolesController {
 		return roleService.getAllRoles();
 	}
 
-	// Get All Roles
+	// Get Role By Id
 	@GetMapping("/getRoleById/{roleId}")
-	public Roles getRoleById(@PathVariable Integer roleId) {
-		return roleService.getRoleById(roleId);
+	public ResponseEntity<Roles> getRoleById(@PathVariable Integer roleId) {
+	    Roles role = roleService.getRoleById(roleId);
+	    return ResponseEntity.ok(role);
 	}
 
 	// Insert Role
